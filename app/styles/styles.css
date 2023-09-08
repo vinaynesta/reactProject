@@ -1,0 +1,67 @@
+/* vinay */
+/* .board,square,game {
+    background-color: red;
+} */
+
+/* styles.module.css */
+
+/* Global styles */
+.home-button {
+    float: right; /* Float the element to the right */
+    margin-right: 20px; /* Add some right margin for spacing */
+}
+
+.right {
+    float: right; /* Float the element to the right */
+    margin-right: 20px; /* Add some right margin for spacing */
+  }
+
+.game {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .game-board {
+    margin-right: 20px;
+  }
+  
+  .game-info {
+    /* Add styles for the game info section */
+  }
+  
+  /* Styles for the Board component */
+  .status {
+    font-weight: bold;
+  }
+  
+  .board-row {
+    display: flex;
+  }
+  
+  /* Styles for the Square component */
+  .square {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* This ensures the container takes the full viewport height */
+  }
+
+ body {
+    background-color: rgb(163, 168, 173);
+    background-image:url('./../img/static/vinay-bg.jpg');
+    background-size: cover; 
+    color: rgb(0, 0, 0);
+  }
+  
