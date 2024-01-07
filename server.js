@@ -7,7 +7,6 @@ import compression from "compression";
 import express from "express";
 import morgan from "morgan";
 import sourceMapSupport from "source-map-support";
-// import game from './app/game';
 
 sourceMapSupport.install();
 installGlobals();
@@ -37,9 +36,6 @@ app.use(express.static("public", { maxAge: "1h" }));
 
 app.use(morgan("tiny"));
 
-// app.get("/game", function(req, res){
-//   res.render(game);
-// });
 
 app.all(
   "*",

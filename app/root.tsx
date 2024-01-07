@@ -9,9 +9,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-// import CBC from "./CBC";
-// import FBC from "./FBC";
+// import ClassBasedComponent from "./classBasedComponent";
+// import FunctionBasedComponent from "./functionBasedComponent";
 // import Game from "./game";
+// import Movies from "./routes/Hobbies/moviesRoot";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -28,8 +29,9 @@ export default function App() {
       </head>
       <body>
         <h3>Vinay's React Application</h3><Link className="home-button" to="/">Go to Home</Link>
-        {/* <CBC></CBC>
-        <FBC></FBC> */}
+        {/* <ClassBasedComponent></ClassBasedComponent>
+        <FunctionBasedComponent></FunctionBasedComponent> */}
+        {/* <Movies /> */}
         <Outlet />
         <ScrollRestoration />
         <Scripts />

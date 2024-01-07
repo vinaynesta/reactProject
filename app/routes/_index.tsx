@@ -59,10 +59,13 @@ export default function Index() {
           </a>
         </li>
         <li>
-            <Link to="/love">Love</Link>
+            <Link to="/Hobbies">Hobbies</Link>
           </li>
         <li>
             <Link to="/game">Game</Link>
+        </li>
+        <li>
+            <Link to="/movies">Movies</Link>
         </li>
       </ul>
     </div>

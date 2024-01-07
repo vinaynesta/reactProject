@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class CBC extends Component {
+export default class ClassBasedComponent extends Component {
   render() {
     return (
       <div>

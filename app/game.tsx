@@ -1,8 +1,20 @@
+import type { SetStateAction} from 'react';
 import { useState } from 'react';
 // import './styles.css';
 import './styles/styles.css'
 
-function Square({ value, onSquareClick }) {
+type SquareProps = {
+  value: string | number; // Define the type for 'value' prop here (string or number)
+  onSquareClick: () => void; // Assuming 'onSquareClick' is a function with no arguments and returning 'void'
+};
+
+type BoardProps = {
+  xIsNext: string | number; // Define the type for 'value' prop here (string or number)
+  squares: any;
+  onPlay: (arg0: any) => void; // Assuming 'onSquareClick' is a function with no arguments and returning 'void'
+};
+
+function Square({ value, onSquareClick }: SquareProps) {
   return (
     <button className="square" onClick={onSquareClick}>
       {value}
@@ -10,8 +22,8 @@ function Square({ value, onSquareClick }) {
   );
 }
 
-function Board({ xIsNext, squares, onPlay }) {
-  function handleClick(i) {
+function Board({ xIsNext, squares, onPlay }: BoardProps) {
+  function handleClick(i: number) {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
@@ -34,7 +46,6 @@ function Board({ xIsNext, squares, onPlay }) {
 
   return (
     <>
-    {/* <div className='game-container'>  */}
       <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
@@ -51,7 +62,6 @@ function Board({ xIsNext, squares, onPlay }) {
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
-      {/* </div> */}
     </>
   );
 }
@@ -62,13 +72,13 @@ export default function Game() {
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
 
-  function handlePlay(nextSquares) {
+  function handlePlay(nextSquares: any) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
   }
 
-  function jumpTo(nextMove) {
+  function jumpTo(nextMove: SetStateAction<number>) {
     setCurrentMove(nextMove);
   }
 
@@ -90,7 +100,7 @@ export default function Game() {
     <div className='game-container'>
     <div className="game">
       <div className="game-board">
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+        <Board xIsNext={xIsNext as unknown as string} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
         <ol>{moves}</ol>
@@ -100,7 +110,7 @@ export default function Game() {
   );
 }
 
-function calculateWinner(squares) {
+function calculateWinner(squares: any[]) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
